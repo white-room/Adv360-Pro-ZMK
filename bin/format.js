@@ -84,7 +84,7 @@ function main() {
         }
     });
 
-    fs.writeFileSync(filePath, out);
+    fs.writeFileSync(filePath, out.replace(/\n{2,}$/, '\n'));
 }
 
 function isBindingsStart(line) {
