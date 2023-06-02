@@ -31,27 +31,45 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
-  };
+
+    qt: quick_tap {
+        compatible = "zmk,behavior-hold-tap";
+        label = "GLOBAL_QUICK_TAP";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <125>;
+        global-quick-tap;
+        bindings = <&kp>, <&kp>;
+    };
+    
+};
 
     keymap {
         compatible = "zmk,keymap";
+
+        #define HYPER LC(LS(LCMD))
+        #define MEH LA(LSHFT)
 
         #define DEFAULT  0
         #define KEYPAD   1
         #define FN       2
         #define MOD      3
-        #define MINI     4
-        #define MINI_SYM 5
-        #define MINI_FN  6
+        #define MINI_42  4
+        #define MINI_42_U 5
+        #define MINI_42_L 6
+        #define MINI_58     7
+        #define MINI_58_U 8
+        #define MINI_58_L  9
 
 
         default_layer {
             bindings = <
-&gresc     &kp N1     &kp N2     &kp N3    &kp N4     &kp N5  &mo MOD                                                                   &mo MOD        &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS 
-&kp TAB    &kp Q      &kp W      &kp E     &kp R      &kp T   &none                                                                     &none          &kp Y   &kp U   &kp I      &kp O     &kp P     &kp EQUAL 
-&kp BSLH   &kp A      &kp S      &kp D     &kp F      &kp G   &kp LC(LS(LCMD))  &kp LCMD  &kp LALT  &none  &none  &kp RCMD   &kp RALT   &kp LA(LSHFT)  &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT   
-&kp LSHFT  &kp Z      &kp X      &kp C     &kp V      &kp B   &none             &none     &kp HOME  &none  &none  &kp PG_UP  &none      &none          &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT 
-&mo FN     &kp LCTRL  &kp GRAVE  &kp LEFT  &kp RIGHT          &kp BSPC          &kp DEL   &kp END                 &kp PG_DN  &kp ENTER  &kp SPACE              &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &tog MINI 
+&kp GRAVE  &kp N1     &kp N2  &kp N3     &kp N4     &kp N5  &mo MOD                                                            &mo MOD    &kp N6  &kp N7    &kp N8     &kp N9   &kp N0     &kp F12      
+&kp TAB    &kp Q      &kp W   &kp E      &kp R      &kp T   &none                                                              &none      &kp Y   &kp U     &kp I      &kp O    &kp P      &kp BSLH     
+&kp ESC    &kp A      &kp S   &kp D      &kp F      &kp G   &kp HYPER  &kp LCMD  &kp LALT   &none  &none  &kp RALT  &kp RCMD   &kp MEH    &kp H   &kp J     &kp K      &kp L    &kp SEMI   &kp SQT      
+&kp LSHFT  &kp Z      &kp X   &kp C      &kp V      &kp B   &none      &none     &kp LEFT   &none  &none  &kp UP    &none      &none      &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT    
+&mo FN     &kp LCTRL  &none   &kp MINUS  &kp EQUAL          &kp BSPC   &kp DEL   &kp RIGHT                &kp DOWN  &kp ENTER  &kp SPACE          &kp LBKT  &kp RBKT   &kp MEH  &kp HYPER  &tog MINI_42 
             >;
         };
 
@@ -85,27 +103,58 @@
             >;
         };
 
-        layer_36 {
+        layer_42 {
             bindings = <
-&none  &none        &none  &none  &none  &none  &trans                                                              &trans              &none  &none  &none      &none    &none           &none  
-&none  &kp Q        &kp W  &kp E  &kp R  &kp T  &trans                                                              &trans              &kp Y  &kp U  &kp I      &kp O    &kp P           &none  
-&none  &kp A        &kp S  &kp D  &kp F  &kp G  &trans             &kp LCMD  &none  &none  &none  &none  &kp RALT   &trans              &kp H  &kp J  &kp K      &kp L    &kp SQT         &none  
-&none  &mt LSHFT Z  &kp X  &kp C  &kp V  &kp B  &none              &none     &none  &none  &none  &none  &none      &none               &kp N  &kp M  &kp COMMA  &kp DOT  &mt RSHFT FSLH  &none  
-&none  &none        &none  &none  &none         &kp BSPC  &lt MINI_SYM TAB   &none                &none  &lt MINI_FN ENTER  &kp SPACE         &none  &none      &none    &none           &trans 
+&kp ESC          &none      &none  &none     &none      &none  &trans                                                                        &trans     &none  &none   &none      &none    &none     &none     
+&kp TAB          &kp Q      &kp W  &kp E     &kp R      &kp T  &trans                                                                        &trans     &kp Y  &kp U   &kp I      &kp O    &kp P     &kp BSLH  
+&mt LCTRL GRAVE  &kp A      &kp S  &kp D     &kp F      &kp G  &trans    &kp LCMD           &none  &none  &none  &none  &kp RALT             &trans     &kp H  &kp J   &kp K      &kp L    &kp SEMI  &kp SQT   
+&kp LSHFT        &kp Z      &kp X  &kp C     &kp V      &kp B  &none     &none              &none  &none  &none  &none  &none                &none      &kp N  &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT 
+&none            &kp LCTRL  &none  &kp LEFT  &kp RIGHT         &kp BSPC  &lt MINI_42_U TAB  &none                &none  &lt MINI_42_L ENTER  &kp SPACE         &kp UP  &kp DOWN   &none    &none     &trans    
             >;
         };
         
-        layer_36_sym {
+        layer_42_upper {
             bindings = <
-&none  &none      &none   &none   &none   &none   &trans                                            &trans  &none      &none      &none     &none      &none           &none  
-&none  &kp N1     &kp N2  &kp N3  &kp N4  &kp N5  &trans                                            &trans  &kp N6     &kp N7     &kp N8    &kp N9     &kp N0          &none  
+&none   &none   &none   &none   &none   &none   &trans                                            &trans  &none   &none     &none     &none      &none      &none  
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &trans                                            &trans  &kp N6  &kp N7    &kp N8    &kp N9     &kp N0     &trans 
+&trans  &none   &none   &none   &none   &none   &trans  &none  &none  &none  &none  &none  &none  &trans  &none   &kp LPAR  &kp RPAR  &kp MINUS  &kp EQUAL  &trans 
+&trans  &none   &none   &none   &none   &none   &none   &none  &none  &none  &none  &none  &none  &none   &none   &kp LBKT  &kp RBKT  &none      &none      &trans 
+&none   &none   &none   &none   &none           &none   &none  &none                &none  &none  &none           &none     &none     &none      &none      &trans 
+            >;
+        };
+        
+        layer_42_lower {
+            bindings = <
+&none      &none      &none     &none     &none   &none   &trans                                            &trans  &none   &none     &none     &none      &none    &none  
+&none      &kp F1     &kp F2    &kp F3    &kp F4  &kp F5  &trans                                            &trans  &kp F6  &kp F7    &kp F8    &kp F9     &kp F10  &none  
+&none      &none      &none     &none     &none   &none   &trans  &none  &none  &none  &none  &none  &none  &trans  &none   &none     &kp UP    &none      &kp F11  &none  
+&kp LSHFT  &kp LCTRL  &kp LALT  &kp LCMD  &none   &none   &none   &none  &none  &none  &none  &none  &none  &none   &none   &kp LEFT  &kp DOWN  &kp RIGHT  &kp F12  &trans 
+&none      &none      &none     &none     &none           &none   &none  &none                &none  &none  &none           &none     &none     &none      &none    &trans 
+            >;
+        };
+
+
+        layer_58 {
+            bindings = <       
+&kp ESC    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &trans                                                                              &trans     &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &none     
+&kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T   &trans                                                                              &trans     &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BSLH  
+&tog CAPS  &kp A   &kp S   &kp D   &kp F   &kp G   &trans    &kp LCMD           &kp RALT  &none  &none  &kp RCMD  &kp RALT             &trans     &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp SQT   
+&kp LSHFT  &kp Z   &kp X   &kp C   &kp V   &kp B   &none     &none              &none     &none  &none  &none     &none                &none      &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT 
+&none      &none   &none   &none   &none           &kp BSPC  &lt MINI_58_U DEL  &none                   &none     &lt MINI_58_L ENTER  &kp SPACE          &none   &none      &none    &none     &trans    
+            >;
+        };
+        
+        layer_58_upper {
+            bindings = <
+&none  &none      &none   &none   &none   &none   &trans                                            &trans  &none      &none      &none     &kp MINUS  &kp EQUAL       &none  
+&none  &kp N1     &kp N2  &kp N3  &kp N4  &kp N5  &trans                                            &trans  &kp N6     &kp N7     &kp N8    &kp LBKT   &kp RBKT        &none  
 &none  &kp GRAVE  &none   &none   &none   &none   &trans  &none  &none  &none  &none  &none  &none  &trans  &kp LEFT   &kp UP     &kp DOWN  &kp RIGHT  &kp SEMI        &none  
 &none  &kp LSHFT  &none   &none   &none   &none   &none   &none  &none  &none  &none  &none  &none  &none   &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT   &mt RSHFT BSLH  &none  
 &none  &none      &none   &none   &none           &none   &none  &none                &none  &none  &none              &none      &none     &none      &none           &trans 
             >;
         };
         
-        layer_36_fn {
+        layer_58_lower {
             bindings = <
 &none  &none   &none   &none   &none   &none   &trans                                            &trans  &none   &none   &none   &none   &none    &none  
 &none  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans                                            &trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &none  
@@ -114,6 +163,5 @@
 &none  &none   &none   &none   &none           &none   &none  &none                &none  &none  &none           &none   &none   &none   &none    &trans 
             >;
         };
-
     };
 };
