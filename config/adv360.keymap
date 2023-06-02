@@ -50,6 +50,11 @@
 
         #define HYPER LC(LS(LCMD))
         #define MEH LA(LSHFT)
+        #define CUT LG(X)
+        #define PASTE LG(V)
+        #define COPY LG(C)
+        #define UNDO LG(Z)
+        #define REDO LG(LS(Z))
 
         #define DEFAULT  0
         #define KEYPAD   1
@@ -65,11 +70,11 @@
 
         default_layer {
             bindings = <
-&kp GRAVE  &kp N1     &kp N2  &kp N3     &kp N4     &kp N5  &mo MOD                                                            &mo MOD    &kp N6  &kp N7    &kp N8     &kp N9   &kp N0     &kp F12      
-&kp TAB    &kp Q      &kp W   &kp E      &kp R      &kp T   &none                                                              &none      &kp Y   &kp U     &kp I      &kp O    &kp P      &kp BSLH     
-&kp ESC    &kp A      &kp S   &kp D      &kp F      &kp G   &kp HYPER  &kp LCMD  &kp LALT   &none  &none  &kp RALT  &kp RCMD   &kp MEH    &kp H   &kp J     &kp K      &kp L    &kp SEMI   &kp SQT      
-&kp LSHFT  &kp Z      &kp X   &kp C      &kp V      &kp B   &none      &none     &kp LEFT   &none  &none  &kp UP    &none      &none      &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT    
-&mo FN     &kp LCTRL  &none   &kp MINUS  &kp EQUAL          &kp BSPC   &kp DEL   &kp RIGHT                &kp DOWN  &kp ENTER  &kp SPACE          &kp LBKT  &kp RBKT   &kp MEH  &kp HYPER  &tog MINI_42 
+&kp GRAVE  &kp N1     &kp N2  &kp N3     &kp N4     &kp N5  &mo MOD                                                           &mo MOD    &kp N6  &kp N7    &kp N8     &kp N9   &kp N0     &kp F12   
+&kp TAB    &kp Q      &kp W   &kp E      &kp R      &kp T   &kp COPY                                                          &kp PASTE  &kp Y   &kp U     &kp I      &kp O    &kp P      &kp BSLH  
+&kp ESC    &kp A      &kp S   &kp D      &kp F      &kp G   &kp UNDO  &kp LCMD  &kp LALT   &none  &none  &kp RALT  &kp RCMD   &kp REDO   &kp H   &kp J     &kp K      &kp L    &kp SEMI   &kp SQT   
+&kp LSHFT  &kp Z      &kp X   &kp C      &kp V      &kp B   &none     &none     &kp LEFT   &none  &none  &kp UP    &none      &none      &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT 
+&mo FN     &kp LCTRL  &none   &kp MINUS  &kp EQUAL          &kp BSPC  &kp DEL   &kp RIGHT                &kp DOWN  &kp ENTER  &kp SPACE          &kp LBKT  &kp RBKT   &kp MEH  &kp HYPER  &tog FN   
             >;
         };
 
@@ -85,11 +90,11 @@
 
         layer_fn {
             bindings = <
-&trans  &kp F1    &kp F2  &kp F3  &kp F4  &kp F5  &trans                                                      &trans  &kp F6  &kp F7        &kp F8        &kp F9      &kp F10           &kp F11   
-&trans  &trans    &trans  &trans  &trans  &trans  &trans                                                      &trans  &trans  &trans        &trans        &kp LBKT    &kp C_PLAY_PAUSE  &kp F12   
-&trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &trans        &trans  &trans  &trans  &trans        &trans        &trans      &trans            &trans    
-&trans  &trans    &trans  &trans  &trans  &trans  &none   &none   &trans  &none  &none  &kp C_BRI_UP  &none   &none   &trans  &kp C_MUTE    &kp C_PREV    &kp C_NEXT  &kp UP            &trans    
-&trans  &kp LALT  &trans  &trans  &trans          &trans  &trans  &trans                &kp C_BRI_DN  &trans  &trans          &kp C_VOL_UP  &kp C_VOL_DN  &kp LEFT    &kp DOWN          &kp RIGHT 
+&trans  &kp F1    &kp F2  &kp F3  &kp F4  &kp F5  &trans                                                                &trans        &kp F6  &kp F7     &kp F8     &kp F9     &kp F10   &kp F11   
+&trans  &trans    &trans  &trans  &trans  &trans  &trans                                                                &trans        &trans  &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans    &kp F12   
+&trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &kp C_MUTE    &kp C_PLAY_PAUSE  &trans        &trans  &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans    &trans    
+&trans  &trans    &trans  &trans  &trans  &trans  &none   &none   &trans  &none  &none  &kp C_VOL_UP  &none             &none         &trans  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp UP    &trans    
+&trans  &kp LALT  &trans  &trans  &trans          &trans  &trans  &trans                &kp C_VOL_DN  &kp C_BRI_DN      &kp C_BRI_UP          &trans     &trans     &kp LEFT   &kp DOWN  &kp RIGHT 
             >;
         };
 
