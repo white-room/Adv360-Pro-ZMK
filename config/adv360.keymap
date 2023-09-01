@@ -21,6 +21,7 @@
 / {
   behaviors {
     #include "macros.dtsi"
+    #include "morphs.dtsi"
 
     hm: homerow_mods {
         compatible = "zmk,behavior-hold-tap";
@@ -56,22 +57,44 @@
         #define REDO LG(LS(Z))
 
         #define QWERTY           0
-        #define COLEMAK_DH_MILES 1
-        #define FN               2
-        #define MOD              3
+        #define QWERTY_PROG      1
+        #define QWERTY_PROG_HTML 2
+        #define COLEMAK_DH_MILES 3
+        #define FN               4
+        #define MOD              5
 
 
-        qwerty {
+        layer_qwerty {
             bindings = <
-&kp ESC    &kp N1    &kp N2    &kp N3     &kp N4     &kp N5  &mo MOD                                                                 &mo MOD    &kp N6  &kp N7    &kp N8     &kp N9   &kp N0     &kp F12   
-&kp TAB    &kp Q     &kp W     &kp E      &kp R      &kp T   &kp COPY                                                                &kp PASTE  &kp Y   &kp U     &kp I      &kp O    &kp P      &kp BSLH  
-&kp GRAVE  &kp A     &kp S     &kp D      &kp F      &kp G   &kp UNDO  &kp LCMD    &kp LALT   &none  &none  &kp RALT   &kp RCMD      &kp REDO   &kp H   &kp J     &kp K      &kp L    &kp SEMI   &kp SQT   
-&kp LSHFT  &kp Z     &kp X     &kp C      &kp V      &kp B   &none     &none       &kp UNDO   &none  &none  &kp MEH    &none         &none      &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT 
-&kp LALT   &kp LBKT  &kp RBKT  &kp MINUS  &kp EQUAL          &kp BSPC  &lt FN DEL  &kp LCTRL                &kp HYPER  &lt FN ENTER  &kp SPACE          &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &tog FN   
+&kp ESC    &kp N1    &kp N2    &kp N3     &kp N4     &kp N5  &mo MOD                                                                        &mo MOD    &kp N6  &kp N7    &kp N8     &kp N9   &kp N0     &kp F12   
+&kp TAB    &kp Q     &kp W     &kp E      &kp R      &kp T   &kp COPY                                                                       &kp PASTE  &kp Y   &kp U     &kp I      &kp O    &kp P      &kp BSLH  
+&kp GRAVE  &kp A     &kp S     &kp D      &kp F      &kp G   &kp UNDO  &kp LCMD    &kp LALT          &none  &none  &kp RALT   &kp RCMD      &kp REDO   &kp H   &kp J     &kp K      &kp L    &kp SEMI   &kp SQT   
+&kp LSHFT  &kp Z     &kp X     &kp C      &kp V      &kp B   &none     &none       &tog QWERTY_PROG  &none  &none  &kp MEH    &none         &none      &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT 
+&kp LALT   &kp LBKT  &kp RBKT  &kp MINUS  &kp EQUAL          &kp BSPC  &lt FN DEL  &kp LCTRL                       &kp HYPER  &lt FN ENTER  &kp SPACE          &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &tog FN   
             >;
         };
 
-        colemak_dh_miles {
+        layer_qwerty_prog {
+            bindings = <
+&trans  &prog_N1       &prog_N2_LBRC    &prog_N3_RBRC      &prog_N4  &prog_N5  &trans                                                               &trans  &prog_N6  &prog_N7  &prog_N8  &prog_N9  &prog_N0          &trans          
+&trans  &trans         &trans           &trans             &trans    &trans    &trans                                                               &trans  &trans    &trans    &trans    &trans    &trans            &prog_PIPE_BSLH 
+&trans  &trans         &trans           &trans             &trans    &trans    &trans  &trans  &trans  &none  &none  &trans                 &trans  &trans  &trans    &trans    &trans    &trans    &trans            &trans          
+&trans  &trans         &trans           &trans             &trans    &trans    &none   &none   &trans  &none  &none  &tog QWERTY_PROG_HTML  &none   &none   &trans    &trans    &trans    &trans    &prog_QMARK_FSLH  &trans          
+&trans  &prog_LBKT_AT  &prog_RBKT_HASH  &prog_UNDER_MINUS  &trans              &trans  &trans  &trans                &trans                 &trans  &trans            &trans    &trans    &trans    &trans            &trans          
+            >;
+        };
+
+        layer_qwerty_prog_html {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                &trans  &trans  &trans  &trans          &trans        &trans    &trans        
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                &trans  &trans  &trans  &trans          &trans        &trans    &trans        
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans          &trans        &trans    &prog_DQT_SQT 
+&trans  &trans  &trans  &trans  &trans  &trans  &none   &none   &trans  &none  &none  &trans  &none   &none   &trans  &trans  &prog_LT_COMMA  &prog_GT_DOT  &kp FSLH  &trans        
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans                &trans  &trans  &trans          &trans  &trans          &trans        &trans    &trans        
+            >;
+        };
+
+        layer_colemak_dh_miles {
             bindings = <
 &kp ESC    &kp N1    &kp N2    &kp N3     &kp N4     &kp N5  &mo MOD                                                                 &mo MOD    &kp N6  &kp N7    &kp N8     &kp N9   &kp N0     &kp F12   
 &kp TAB    &kp Q     &kp W     &kp F      &kp P      &kp V   &kp COPY                                                                &kp PASTE  &kp J   &kp L     &kp U      &kp Y    &kp SEMI   &kp BSLH  

@@ -1,0 +1,184 @@
+prog_N1: prog_N1 {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N1";
+    #binding-cells = <0>;
+    bindings = <&kp EXCL>, <&kp N1>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_N2: prog_N2 {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N2";
+    #binding-cells = <0>;
+    bindings = <&kp AT>, <&kp N2>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_N2_LBRC: prog_N2_LBRC {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N2_LBRC";
+    #binding-cells = <0>;
+    bindings = <&kp LBRC>, <&kp N2>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_N3: prog_N3 {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N3";
+    #binding-cells = <0>;
+    bindings = <&kp HASH>, <&kp N3>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+
+prog_N3_RBRC: prog_N3_RBRC {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N3_RBRC";
+    #binding-cells = <0>;
+    bindings = <&kp RBRC>, <&kp N3>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_N4: prog_N4 {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N4";
+    #binding-cells = <0>;
+    bindings = <&kp DOLLAR>, <&kp N4>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_N5: prog_N5 {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N5";
+    #binding-cells = <0>;
+    bindings = <&kp PERCENT>, <&kp N5>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_N6: prog_N6 {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N6";
+    #binding-cells = <0>;
+    bindings = <&kp CARET>, <&kp N6>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_N7: prog_N7 {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N7";
+    #binding-cells = <0>;
+    bindings = <&kp AMPS>, <&kp N7>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_N8: prog_N8 {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N8";
+    #binding-cells = <0>;
+    bindings = <&kp STAR>, <&kp N8>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_N9: prog_N9 {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N9";
+    #binding-cells = <0>;
+    bindings = <&kp LPAR>, <&kp N9>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_N0: prog_N0 {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N0";
+    #binding-cells = <0>;
+    bindings = <&kp RPAR>, <&kp N0>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_N0: prog_N0 {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_N0";
+    #binding-cells = <0>;
+    bindings = <&kp RPAR>, <&kp N0>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_PIPE_BSLH: prog_PIPE_BSLH {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_PIPE_BSLH";
+    #binding-cells = <0>;
+    bindings = <&kp PIPE>, <&kp BSLH>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_LBRC_LBKT: prog_LBRC_LBKT {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_LBRC_LBKT";
+    #binding-cells = <0>;
+    bindings = <&kp LBRC>, <&kp LBKT>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_RBRC_RBKT: prog_RBRC_RBKT {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_RBRC_RBKT";
+    #binding-cells = <0>;
+    bindings = <&kp RBRC>, <&kp RBKT>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_LBKT_AT: prog_LBKT_AT {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_LBKT_AT";
+    #binding-cells = <0>;
+    bindings = <&kp LBKT>, <&kp AT>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_RBKT_HASH: prog_RBKT_HASH {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_RBKT_HASH";
+    #binding-cells = <0>;
+    bindings = <&kp RBKT>, <&kp HASH>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_QMARK_FSLH: prog_QMARK_FSLH {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_QMARK_FSLH";
+    #binding-cells = <0>;
+    bindings = <&kp QMARK>, <&kp FSLH>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_UNDER_MINUS: prog_UNDER_MINUS {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_UNDER_MINUS";
+    #binding-cells = <0>;
+    bindings = <&kp UNDER>, <&kp MINUS>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_LT_COMMA: prog_LT_COMMA {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_LT_COMMA";
+    #binding-cells = <0>;
+    bindings = <&kp LT>, <&kp COMMA>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_GT_DOT: prog_GT_DOT {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_GT_DOT";
+    #binding-cells = <0>;
+    bindings = <&kp GT>, <&kp DOT>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+prog_DQT_SQT: prog_DQT_SQT {
+    compatible = "zmk,behavior-mod-morph";
+    label = "prog_DQT_SQT";
+    #binding-cells = <0>;
+    bindings = <&kp DQT>, <&kp SQT>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
