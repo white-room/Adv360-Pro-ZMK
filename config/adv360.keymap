@@ -59,9 +59,12 @@
         #define QWERTY           0
         #define QWERTY_PROG      1
         #define QWERTY_PROG_HTML 2
-        #define COLEMAK_DH_MILES 3
-        #define FN               4
-        #define MOD              5
+        #define FN               3
+        #define MOD              4
+        #define L42              5
+        #define L42_UP           6
+        #define L42_DOWN         7
+        #define DVORAK           8
 
 
         layer_qwerty {
@@ -69,7 +72,7 @@
 &kp ESC    &kp N1    &kp N2    &kp N3     &kp N4     &kp N5  &mo MOD                                                                        &mo MOD    &kp N6  &kp N7    &kp N8     &kp N9   &kp N0     &kp F12   
 &kp TAB    &kp Q     &kp W     &kp E      &kp R      &kp T   &kp COPY                                                                       &kp PASTE  &kp Y   &kp U     &kp I      &kp O    &kp P      &kp BSLH  
 &kp GRAVE  &kp A     &kp S     &kp D      &kp F      &kp G   &kp UNDO  &kp LCMD    &kp LALT          &none  &none  &kp RALT   &kp RCMD      &kp REDO   &kp H   &kp J     &kp K      &kp L    &kp SEMI   &kp SQT   
-&kp LSHFT  &kp Z     &kp X     &kp C      &kp V      &kp B   &none     &none       &tog QWERTY_PROG  &none  &none  &kp MEH    &none         &none      &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT 
+&kp LSHFT  &kp Z     &kp X     &kp C      &kp V      &kp B   &none     &none       &tog QWERTY_PROG  &none  &none  &tog L42   &none         &none      &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT 
 &kp LALT   &kp LBKT  &kp RBKT  &kp MINUS  &kp EQUAL          &kp BSPC  &lt FN DEL  &kp LCTRL                       &kp HYPER  &lt FN ENTER  &kp SPACE          &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &tog FN   
             >;
         };
@@ -86,21 +89,11 @@
 
         layer_qwerty_prog_html {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                &trans  &trans  &trans  &trans          &trans        &trans    &trans        
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                &trans  &trans  &trans  &trans          &trans        &trans    &trans        
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans          &trans        &trans    &prog_DQT_SQT 
-&trans  &trans  &trans  &trans  &trans  &trans  &none   &none   &trans  &none  &none  &trans  &none   &none   &trans  &trans  &prog_LT_COMMA  &prog_GT_DOT  &kp FSLH  &trans        
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans                &trans  &trans  &trans          &trans  &trans          &trans        &trans    &trans        
-            >;
-        };
-
-        layer_colemak_dh_miles {
-            bindings = <
-&kp ESC    &kp N1    &kp N2    &kp N3     &kp N4     &kp N5  &mo MOD                                                                 &mo MOD    &kp N6  &kp N7    &kp N8     &kp N9   &kp N0     &kp F12   
-&kp TAB    &kp Q     &kp W     &kp F      &kp P      &kp V   &kp COPY                                                                &kp PASTE  &kp J   &kp L     &kp U      &kp Y    &kp SEMI   &kp BSLH  
-&kp GRAVE  &kp A     &kp R     &kp S      &kp T      &kp G   &kp UNDO  &kp LCMD    &kp LALT   &none  &none  &kp RALT   &kp RCMD      &kp REDO   &kp M   &kp N     &kp E      &kp I    &kp O      &kp SQT   
-&kp LSHFT  &kp Z     &kp X     &kp C      &kp D      &kp B   &none     &none       &kp UNDO   &none  &none  &kp MEH    &none         &none      &kp K   &kp H     &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT 
-&kp LALT   &kp LBKT  &kp RBKT  &kp MINUS  &kp EQUAL          &kp BSPC  &lt FN DEL  &kp LCTRL                &kp HYPER  &lt FN ENTER  &kp SPACE          &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &tog FN   
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                &trans  &trans  &trans  &trans          &trans        &trans  &trans        
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                &trans  &trans  &trans  &trans          &trans        &trans  &trans        
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans          &trans        &trans  &prog_DQT_SQT 
+&trans  &trans  &trans  &trans  &trans  &trans  &none   &none   &trans  &none  &none  &trans  &none   &none   &trans  &trans  &prog_LT_COMMA  &prog_GT_DOT  &trans  &trans        
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans                &trans  &trans  &trans          &trans  &trans          &trans        &trans  &trans        
             >;
         };
 
@@ -116,12 +109,58 @@
 
         layer_mod {
             bindings = <
-&tog COLEMAK_DH_MILES  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                                            &trans                  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none 
-&none                  &none         &none         &none         &none         &none         &bootloader                                                                      &bootloader             &none         &none         &none         &none         &none         &none 
-&none                  &none         &none         &none         &none         &none         &rgb_ug RGB_MEFS_CMD 5  &bt BT_CLR  &none  &none  &none  &bt BT_CLR  &bt BT_CLR  &rgb_ug RGB_MEFS_CMD 5  &none         &none         &none         &none         &none         &none 
-&none                  &none         &none         &none         &none         &none         &none                   &none       &none  &none  &none  &none       &none       &none                   &none         &none         &none         &none         &none         &none 
-&none                  &none         &none         &bl BL_INC    &bl BL_DEC                  &rgb_ug RGB_TOG         &bl BL_TOG  &none                &none       &bl BL_TOG  &rgb_ug RGB_TOG                       &bl BL_INC    &bl BL_DEC    &none         &none         &none 
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                                            &trans                  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none 
+&none  &none         &none         &none         &none         &none         &bootloader                                                                      &bootloader             &none         &none         &none         &none         &none         &none 
+&none  &none         &none         &none         &none         &none         &rgb_ug RGB_MEFS_CMD 5  &bt BT_CLR  &none  &none  &none  &bt BT_CLR  &bt BT_CLR  &rgb_ug RGB_MEFS_CMD 5  &none         &none         &none         &none         &none         &none 
+&none  &none         &none         &none         &none         &none         &none                   &none       &none  &none  &none  &none       &none       &none                   &none         &none         &none         &none         &none         &none 
+&none  &none         &none         &bl BL_INC    &bl BL_DEC                  &rgb_ug RGB_TOG         &bl BL_TOG  &none                &none       &bl BL_TOG  &rgb_ug RGB_TOG                       &bl BL_INC    &bl BL_DEC    &none         &none         &none 
             >;
         };
-    };
+
+
+/* *********************** 42 KEY LAYOUT *********************** */ 
+        layer_qwerty_42 {
+            bindings = <
+&none      &none  &none  &none  &none  &none  &mo MOD                                                                      &mo MOD    &none  &none  &none      &none    &none     &none         
+&kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T  &none                                                                        &none      &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSLH      
+&kp ESC    &kp A  &kp S  &kp D  &kp F  &kp G  &none     &kp LCMD          &none  &none  &none  &none     &kp RALT          &none      &kp H  &kp J  &kp K      &kp L    &kp SEMI  &lt RCTRL SQT 
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &none     &none             &none  &none  &none  &tog L42  &none             &none      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT     
+&none      &none  &none  &none  &none         &kp BSPC  &lt L42_DOWN DEL  &none                &none     &lt L42_UP ENTER  &kp SPACE         &none  &none      &none    &none     &none         
+            >;
+        };
+
+
+        layer_qwerty_42_up {
+            bindings = <
+&none   &none     &none     &none      &none      &none   &mo MOD                                                                     &mo MOD  &none   &none     &none     &none   &none      &none    
+&trans  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5  &none                                                                       &none    &kp N6  &kp N7    &kp N8    &kp N9  &kp N0     &kp BSLH 
+&trans  &trans    &trans    &trans     &trans     &trans  &none    &trans            &none  &none  &none  &none     &trans            &none    &trans  &trans    &trans    &trans  &trans     &trans   
+&trans  &kp LBKT  &kp RBKT  &kp MINUS  &kp EQUAL  &trans  &none    &none             &none  &none  &none  &tog L42  &none             &none    &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans   
+&none   &none     &none     &none      &none              &trans   &lt L42_DOWN DEL  &none                &none     &lt L42_UP ENTER  &trans           &none     &none     &none   &none      &none    
+            >;
+        };
+
+        layer_qwerty_42_down {
+            bindings = <
+&none    &none   &none   &none   &none   &none   &mo MOD                                                                      &mo MOD    &none         &none         &none   &none   &none    &none   
+&kp TAB  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans                                                                       &trans     &kp F6        &kp F7        &kp F8  &kp F9  &kp F10  &kp F11 
+&trans   &trans  &trans  &trans  &trans  &trans  &none     &trans            &none  &none  &none  &none     &trans            &none      &kp C_VOL_UP  &kp C_BRI_UP  &trans  &trans  &trans   &kp F12 
+&trans   &trans  &trans  &trans  &trans  &trans  &none     &none             &none  &none  &none  &tog L42  &none             &none      &kp C_VOL_DN  &kp C_BRI_DN  &trans  &trans  &trans   &trans  
+&none    &none   &none   &none   &none           &kp BSPC  &lt L42_DOWN DEL  &none                &none     &lt L42_UP ENTER  &kp SPACE                &none         &none   &none   &none    &none   
+            >;
+        };
+
+
+/* *********************** DVORAK KEY LAYOUT *********************** */ 
+        layer_dvorak {
+            bindings = <
+&kp ESC    &kp N1    &kp N2     &kp N3     &kp N4     &kp N5  &mo MOD                                                                 &mo MOD    &kp N6  &kp N7    &kp N8    &kp N9  &kp N0     &kp F12   
+&kp TAB    &kp SQT   &kp COMMA  &kp DOT    &kp P      &kp Y   &kp COPY                                                                &kp PASTE  &kp F   &kp G     &kp C     &kp R   &kp L      &kp BSLH  
+&kp GRAVE  &kp A     &kp O      &kp E      &kp U      &kp I   &kp UNDO  &kp LCMD    &kp LALT   &none  &none  &kp RALT   &kp RCMD      &kp REDO   &kp D   &kp H     &kp T     &kp N   &kp S      &kp SQT   
+&kp LSHFT  &kp SEMI  &kp Q      &kp J      &kp K      &kp X   &none     &none       &kp UNDO   &none  &none  &kp MEH    &none         &none      &kp B   &kp M     &kp W     &kp V   &kp Z      &kp RSHFT 
+&kp LALT   &kp LBKT  &kp RBKT   &kp MINUS  &kp EQUAL          &kp BSPC  &lt FN DEL  &kp LCTRL                &kp HYPER  &lt FN ENTER  &kp SPACE          &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &tog FN   
+            >;
+        };
+
+    }; 
 };
