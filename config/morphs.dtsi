@@ -95,14 +95,6 @@ p_N0: p_N0 {
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
 
-p_N0: p_N0 {
-    compatible = "zmk,behavior-mod-morph";
-    label = "p_N0";
-    #binding-cells = <0>;
-    bindings = <&kp RPAR>, <&kp N0>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-};
-
 p_PIPE_BSLH: p_PIPE_BSLH {
     compatible = "zmk,behavior-mod-morph";
     label = "p_PIPE_BSLH";
