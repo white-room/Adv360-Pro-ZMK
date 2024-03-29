@@ -18,6 +18,7 @@ all:
 		-v $(PWD)/config:/app/config:ro$(SELINUX2) \
 		-e TIMESTAMP=$(TIMESTAMP) \
 		zmk
+	open firmware
 
 clean:
 	rm -f firmware/*.uf2
