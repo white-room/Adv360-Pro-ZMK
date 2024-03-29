@@ -132,12 +132,24 @@
             bindings = <
 &none      &none  &none  &none  &none  &none  &trans                                                                  &trans       &none  &none  &none      &none    &none     &none
 &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T  &trans                                                                  &trans       &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSLH
-&kp GRAVE  &kp A  &kp S  &kp D  &kp F  &kp G  &trans           &ht LCMD ESC    &none      &none  &none                &trans       &kp H  &kp J  &kp K      &kp L    &kp SEMI  &ht RCTRL SQT
+&kp GRAVE  &kp A  &kp S  &kp D  &kp F  &kp G  &tog 5           &ht LCMD ESC    &none      &none  &none                &trans       &kp H  &kp J  &kp K      &kp L    &kp SEMI  &ht RCTRL SQT
 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B                                   &none      &none                                    &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-&trans     &none  &none  &none  &none         &lt 5 BACKSPACE  &ht LSHIFT TAB  &none      &none  &ht RIGHT_ALT ENTER  &lt 6 SPACE         &none  &none      &none    &none     &trans
+&trans     &none  &none  &none  &none         &lt 6 BACKSPACE  &ht LSHIFT TAB  &none      &none  &ht RIGHT_ALT ENTER  &lt 8 SPACE         &none  &none      &none    &none     &trans
             >;
 
             label = "41 Key";
+        };
+
+        layer_41key_alt {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                               &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                               &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans      &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                           &trans      &trans                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &lt 7 BACKSPACE  &trans  &trans      &trans  &trans  &lt 9 SPACE          &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "41 Key Alt";
         };
 
         layer_41key_symbols {
@@ -152,6 +164,17 @@
             label = "41 Key Symbols";
         };
 
+        layer_41key_num_sym {
+            label = "41 Key Numbers & Symbols";
+            bindings = <
+&trans     &trans     &trans       &trans    &trans    &trans     &trans                                      &trans  &trans     &trans  &trans  &trans  &trans     &trans
+&kp GRAVE  &kp EXCL   &kp AT_SIGN  &kp LBRC  &kp RBRC  &kp PIPE   &trans                                      &trans  &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR   &trans
+&kp TILDE  &kp HASH   &kp DOLLAR   &kp LPAR  &kp RPAR  &kp AMPS   &trans  &trans  &trans      &trans  &trans  &trans  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp EQUAL  &kp DQT
+&trans     &kp PRCNT  &kp CARET    &kp LBKT  &kp RBKT  &kp UNDER                  &trans      &trans                  &kp DOT    &kp N1  &kp N2  &kp N3  &kp N0     &trans
+&trans     &trans     &trans       &trans    &trans               &trans  &trans  &trans      &trans  &trans  &trans             &trans  &trans  &trans  &trans     &trans
+            >;
+        };
+
         layer_41key_num {
             bindings = <
 &trans  &trans     &trans     &trans        &trans    &trans              &trans                                      &trans  &trans  &trans    &trans    &trans  &trans     &trans
@@ -162,6 +185,18 @@
             >;
 
             label = "41 Key Numbers";
+        };
+
+        layer_41key_nav {
+            bindings = <
+&trans   &trans      &trans     &trans    &trans    &trans              &trans                                      &trans  &trans        &trans    &trans    &trans  &trans     &trans
+&kp F11  &kp F1      &kp F2     &kp F3    &kp F4    &kp F5              &trans                                      &trans  &kp F6        &kp F7    &kp F8    &kp F9  &kp F10    &kp F12
+&trans   &trans      &trans     &trans    &trans    &trans              &trans  &trans  &trans      &trans  &trans  &trans  &kp C_VOL_UP  &trans    &trans    &trans  &trans     &kp C_BRI_UP
+&trans   &kp LSHIFT  &kp LCTRL  &kp LALT  &kp LCMD  &kp LS(LC(LG(N4)))                  &trans      &trans                  &kp C_VOL_DN  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp C_BRI_DN
+&trans   &trans      &trans     &trans    &trans                        &trans  &trans  &trans      &trans  &trans  &trans                &trans    &trans    &trans  &trans     &trans
+            >;
+
+            label = "41 Key Nav";
         };
 
         /*
