@@ -90,17 +90,17 @@
 
         default_layer {
             bindings = <
-&kp GRAVE  &kp N1            &kp N2             &kp N3     &kp N4     &kp N5  &tog 1                                                        &mo 3      &kp N6  &kp N7    &kp N8     &kp N9   &kp N0     &kp F12
-&kp TAB    &kp Q             &kp W              &kp E      &kp R      &kp T   &tog 4                                                        &none      &kp Y   &kp U     &kp I      &kp O    &kp P      &kp BSLH
-&kp CAPS   &kp A             &kp S              &kp D      &kp F      &kp G   &none     &kp LCMD   &kp LALT       &kp LGUI   &kp RIGHT_ALT  &none      &kp H   &kp J     &kp K      &kp L    &kp SEMI   &kp SQT
-&kp LSHFT  &kp Z             &kp X              &kp C      &kp V      &kp B                        &kp ESC        &kp RCTRL                            &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT
-&mo 2      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp MINUS  &kp EQUAL          &kp BSPC  &lt 2 TAB  &kp LCTRL      &kp HYPER  &lt 2 RETURN   &kp SPACE          &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &mo 2
+&kp ESC    &kp N1            &kp N2             &kp N3     &kp N4     &kp N5  &tog 1                                                       &mo 3      &kp N6  &kp N7    &kp N8     &kp N9   &kp N0     &kp F12
+&kp TAB    &kp Q             &kp W              &kp E      &kp R      &kp T   &tog 4                                                       &none      &kp Y   &kp U     &kp I      &kp O    &kp P      &kp BSLH
+&kp GRAVE  &kp A             &kp S              &kp D      &kp F      &kp G   &none     &kp LCMD   &kp LALT        &kp RALT  &kp RCMD      &none      &kp H   &kp J     &kp K      &kp L    &kp SEMI   &kp SQT
+&kp LSHFT  &kp Z             &kp X              &kp C      &kp V      &kp B                        &kp ESC         &kp HOME                           &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH   &kp RSHFT
+&kp LCTRL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp MINUS  &kp EQUAL          &kp BSPC  &lt 2 TAB  &kp DELETE      &kp END   &lt 2 RETURN  &kp SPACE          &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &mo 2
             >;
         };
 
         keypad {
             bindings = <
-&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &trans                                                &mo 3      &kp N6  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
+&trans     &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &trans                                                &mo 3      &kp N6  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
 &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T   &none                                                 &none      &kp Y   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
 &kp ESC    &kp A   &kp S   &kp D   &kp F   &kp G   &none   &kp LCMD  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp H   &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
 &kp LSHFT  &kp Z   &kp X   &kp C   &kp V   &kp B                     &kp HOME      &kp PG_UP                        &kp N   &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
@@ -132,9 +132,9 @@
             bindings = <
 &none      &none  &none  &none  &none  &none  &trans                                                                  &trans       &none  &none  &none      &none    &none     &none
 &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T  &trans                                                                  &trans       &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSLH
-&kp GRAVE  &kp A  &kp S  &kp D  &kp F  &kp G  &tog 5           &ht LCMD ESC    &none      &none  &none                &trans       &kp H  &kp J  &kp K      &kp L    &kp SEMI  &ht RCTRL SQT
+&kp GRAVE  &kp A  &kp S  &kp D  &kp F  &kp G  &tog 5           &mt LCMD ESC    &none      &none  &none                &trans       &kp H  &kp J  &kp K      &kp L    &kp SEMI  &mt RCTRL SQT
 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B                                   &none      &none                                    &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-&trans     &none  &none  &none  &none         &lt 6 BACKSPACE  &ht LSHIFT TAB  &none      &none  &ht RIGHT_ALT ENTER  &lt 8 SPACE         &none  &none      &none    &none     &trans
+&trans     &none  &none  &none  &none         &lt 8 BACKSPACE  &mt LSHIFT TAB  &none      &none  &mt RIGHT_ALT ENTER  &lt 6 SPACE         &none  &none      &none    &none     &trans
             >;
 
             label = "41 Key";
@@ -146,7 +146,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                               &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans      &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                           &trans      &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &lt 7 BACKSPACE  &trans  &trans      &trans  &trans  &lt 9 SPACE          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &lt 9 BACKSPACE  &trans  &trans      &trans  &trans  &lt 7 SPACE          &trans  &trans  &trans  &trans  &trans
             >;
 
             label = "41 Key Alt";
@@ -156,8 +156,8 @@
             bindings = <
 &trans  &trans     &trans       &trans     &trans      &trans        &trans                                      &trans  &trans        &trans    &trans    &trans    &trans     &trans
 &trans  &kp EXCL   &kp AT_SIGN  &kp HASH   &kp DOLLAR  &kp PERCENT   &trans                                      &trans  &kp CARET     &kp AMPS  &kp LPAR  &kp RPAR  &kp STAR   &kp PIPE
-&trans  &kp GRAVE  &kp TILDE    &kp UNDER  &kp PLUS    &kp C_BRI_UP  &trans  &trans  &trans      &trans  &trans  &trans  &kp C_VOL_UP  &kp LT    &kp LBRC  &kp RBRC  &kp COLON  &kp DQT
-&trans  &kp LT     &kp GT       &kp MINUS  &kp EQUAL   &kp C_BRI_DN                  &trans      &trans                  &kp C_VOL_DN  &kp GT    &kp LBKT  &kp RBKT  &kp QMARK  &trans
+&trans  &kp GRAVE  &kp TILDE    &kp UNDER  &kp PLUS    &kp C_BRI_UP  &trans  &trans  &trans      &trans  &trans  &trans  &kp C_VOL_UP  &kp GT    &kp LBRC  &kp RBRC  &kp COLON  &kp DQT
+&trans  &kp LT     &kp GT       &kp MINUS  &kp EQUAL   &kp C_BRI_DN                  &trans      &trans                  &kp C_VOL_DN  &kp LT    &kp LBKT  &kp RBKT  &kp QMARK  &trans
 &trans  &trans     &trans       &trans     &trans                    &trans  &trans  &trans      &trans  &trans  &trans                &trans    &trans    &trans    &trans     &trans
             >;
 
