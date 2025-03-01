@@ -120,12 +120,12 @@
             key-positions = <73 57>;
         };
 
-        under {
+        under_alt {
             bindings = <&kp UNDERSCORE>;
             key-positions = <63 62>;
         };
 
-        plus {
+        plus_alt {
             bindings = <&kp PLUS>;
             key-positions = <64 63>;
         };
